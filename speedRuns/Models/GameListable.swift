@@ -6,12 +6,16 @@
 //  Copyright © 2020 Aaron Rosenfeld. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class GameListable {
-    var name: String
+    var name: String?
+    var releaseDate: String?
+    var imageURL: String?
     
-    init(name: String) {
+    init(name: String?, releaseDate: String?, imageURL: String?) {
         self.name = name
+        self.releaseDate = releaseDate
+        self.imageURL = imageURL
     }
 }

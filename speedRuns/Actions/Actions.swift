@@ -8,4 +8,6 @@
 
 import ReSwift
 
-struct GetGamesListAction: Action {}
+struct GetGamesListAction: Action {
+    let query: String?
+}

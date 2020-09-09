@@ -7,15 +7,26 @@
 //
 
 import ReSwift
+import Nuke
 
 func gameListReducer(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
     
     switch action {
-    case _ as GetGamesListAction:
+    case let action as GetGamesListAction:
         var list: [GameListable] = []
-        for i in 0 ... 9 {
-            list.append(GameListable(name: "Game \(i)"))
+        searchGames(query: action.query ?? "") { result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let searchData):
+                for game in searchData.data {
+                    list.append(GameListable(name: game.names?.twitch,
+                                             releaseDate: game.release_date,
+                                             imageURL: game.assets?.cover_large?.uri))
+                    print(game)
+                }
+            }
         }
         state.gamesList = list
     default:

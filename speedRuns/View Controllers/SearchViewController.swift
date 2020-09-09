@@ -21,6 +21,7 @@ class SearchViewController: UIViewController, StoreSubscriber {
         let sb = UISearchBar()
         sb.backgroundColor = .systemTeal
         sb.searchBarStyle = .minimal
+        sb.delegate = self
         return sb
     }()
     
@@ -38,7 +39,6 @@ class SearchViewController: UIViewController, StoreSubscriber {
         super.viewDidLoad()
         setUpView()
         mainStore.subscribe(self)
-        mainStore.dispatch(GetGamesListAction())
     }
     
     func newState(state: AppState) {
@@ -76,12 +76,21 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameListCell
         cell.textLabel?.text = gameList?[indexPath.row].name
-        cell.detailTextLabel?.text = "Subtitle line"
+        cell.detailTextLabel?.text = gameList?[indexPath.row].releaseDate
         return cell
     }
     
 }
 
 extension SearchViewController: UITableViewDelegate {
+    
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchAction = GetGamesListAction(query: searchBar.text)
+        mainStore.dispatch(searchAction)
+    }
     
 }
