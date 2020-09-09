@@ -16,7 +16,8 @@ enum RequestErorr: Error {
 func searchGames(query: String, completion: @escaping(Result<GameListableResponseData, Error>) -> Void) {
     let urlSafeQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
     guard let url = URL(string: "https://www.speedrun.com/api/v1/games?name=\(urlSafeQuery)") else { fatalError() }
-    let dataTask = URLSession.shared.dataTask(with: url) { data, _, _ in
+    let dataTask = URLSession.shared.dataTask(with: url) { data, _, error in
+        if let error = error { completion(.failure(error)) }
         guard let jsonData = data else {
             completion(.failure(RequestErorr.noData))
             return
