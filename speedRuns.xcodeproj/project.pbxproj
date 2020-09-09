@@ -20,6 +20,7 @@
 		9334B4322508A366000F0BFB /* GameListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B4312508A366000F0BFB /* GameListReducer.swift */; };
 		9334B4352508A6FC000F0BFB /* SpeedRunRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B4342508A6FC000F0BFB /* SpeedRunRequests.swift */; };
 		9334B4372508A87A000F0BFB /* GameListableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B4362508A87A000F0BFB /* GameListableResponse.swift */; };
+		9334B43925097760000F0BFB /* Thunks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B43825097760000F0BFB /* Thunks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		9334B4312508A366000F0BFB /* GameListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListReducer.swift; sourceTree = "<group>"; };
 		9334B4342508A6FC000F0BFB /* SpeedRunRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedRunRequests.swift; sourceTree = "<group>"; };
 		9334B4362508A87A000F0BFB /* GameListableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListableResponse.swift; sourceTree = "<group>"; };
+		9334B43825097760000F0BFB /* Thunks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thunks.swift; sourceTree = "<group>"; };
 		D082744E9AA40811C03D23F9 /* Pods-speedRuns.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-speedRuns.release.xcconfig"; path = "Target Support Files/Pods-speedRuns/Pods-speedRuns.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				9334B42E2508A2F0000F0BFB /* Actions.swift */,
+				9334B43825097760000F0BFB /* Thunks.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				9334B40C25088DA2000F0BFB /* AppDelegate.swift in Sources */,
 				9334B42C2508A255000F0BFB /* GameListable.swift in Sources */,
 				9334B40E25088DA2000F0BFB /* SceneDelegate.swift in Sources */,
+				9334B43925097760000F0BFB /* Thunks.swift in Sources */,
 				9334B42225089BE6000F0BFB /* GameListCell.swift in Sources */,
 				9334B42F2508A2F0000F0BFB /* Actions.swift in Sources */,
 			);

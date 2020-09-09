@@ -8,10 +8,14 @@
 
 import UIKit
 import ReSwift
+import ReSwiftThunk
+
+let thunkMiddleware: Middleware<AppState> = createThunkMiddleware()
 
 let mainStore = Store<AppState>(
     reducer: gameListReducer,
-    state: nil
+    state: nil,
+    middleware: [thunkMiddleware]
 )
 
 @UIApplicationMain

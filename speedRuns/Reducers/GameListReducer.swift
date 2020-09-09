@@ -13,22 +13,8 @@ func gameListReducer(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
     
     switch action {
-    case let action as GetGamesListAction:
-        var list: [GameListable] = []
-        searchGames(query: action.query ?? "") { result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let searchData):
-                for game in searchData.data {
-                    list.append(GameListable(name: game.names?.twitch,
-                                             releaseDate: game.release_date,
-                                             imageURL: game.assets?.cover_large?.uri))
-                    print(game)
-                }
-            }
-        }
-        state.gamesList = list
+    case let action as SetGameListAction:
+        state.gamesList = action.gameList
     default:
         break
     }

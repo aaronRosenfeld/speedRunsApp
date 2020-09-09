@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import ReSwift
+import Nuke
 
 class SearchViewController: UIViewController, StoreSubscriber {
     typealias StoreSubscriberStateType = AppState
@@ -43,6 +44,9 @@ class SearchViewController: UIViewController, StoreSubscriber {
     
     func newState(state: AppState) {
         gameList = state.gamesList
+        DispatchQueue.main.async { [unowned self] in
+            self.tableView.reloadData()
+        }
     }
 
     private func setUpView() {
@@ -77,6 +81,12 @@ extension SearchViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameListCell
         cell.textLabel?.text = gameList?[indexPath.row].name
         cell.detailTextLabel?.text = gameList?[indexPath.row].releaseDate
+        let imageURL = URL(string: gameList?[indexPath.row].imageURL ?? "")!
+        let options = ImageLoadingOptions(
+            placeholder: UIImage(named: "placeholder"),
+            transition: .fadeIn(duration: 0.33)
+        )
+        Nuke.loadImage(with: imageURL, options: options, into: cell.imageView!)
         return cell
     }
     
@@ -89,8 +99,7 @@ extension SearchViewController: UITableViewDelegate {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let searchAction = GetGamesListAction(query: searchBar.text)
-        mainStore.dispatch(searchAction)
+        mainStore.dispatch(getGameListThunk(searchBar.text ?? ""))
     }
     
 }
