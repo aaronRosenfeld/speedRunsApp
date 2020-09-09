@@ -1,0 +1,28 @@
+PODS:
+  - Hero (1.5.0)
+  - Nuke (9.1.2)
+  - ReSwift (5.0.0)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - Hero
+  - Nuke
+  - ReSwift
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - Hero
+    - Nuke
+    - ReSwift
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Hero: b7385b75e7259da62f4f85462f59a5082d66b058
+  Nuke: dd2e6be6a34c042a7861e190632781d11f253026
+  ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: a76fed3939e0fcc2f05be82042f2f25cf471d465
+
+COCOAPODS: 1.9.3
