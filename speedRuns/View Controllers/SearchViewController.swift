@@ -30,6 +30,7 @@ class SearchViewController: UIViewController, StoreSubscriber {
         let tv = UITableView()
         tv.dataSource = self
         tv.delegate = self
+        tv.separatorStyle = .none
         tv.register(GameListCell.self, forCellReuseIdentifier: "cell")
         return tv
     }()
@@ -54,7 +55,7 @@ class SearchViewController: UIViewController, StoreSubscriber {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.barTintColor = .systemTeal
         navigationController?.navigationBar.isTranslucent = false
-        
+
         view.addSubview(searchBar)
         view.addSubview(tableView)
         
@@ -79,14 +80,15 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameListCell
-        cell.textLabel?.text = gameList?[indexPath.row].name
-        cell.detailTextLabel?.text = gameList?[indexPath.row].releaseDate
+        cell.gameName = gameList?[indexPath.row].name
+        cell.releaseDate = gameList?[indexPath.row].releaseDate
         let imageURL = URL(string: gameList?[indexPath.row].imageURL ?? "")!
         let options = ImageLoadingOptions(
             placeholder: UIImage(named: "placeholder"),
-            transition: .fadeIn(duration: 0.33)
+            transition: .fadeIn(duration: 0.33),
+            contentModes: .init(success: .scaleAspectFit, failure: .scaleAspectFit, placeholder: .scaleAspectFit)
         )
-        Nuke.loadImage(with: imageURL, options: options, into: cell.imageView!)
+        Nuke.loadImage(with: imageURL, options: options, into: cell.gameImageView)
         return cell
     }
     
@@ -100,6 +102,7 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         mainStore.dispatch(getGameListThunk(searchBar.text ?? ""))
+        tableView.setContentOffset(.zero, animated: false)
     }
     
 }

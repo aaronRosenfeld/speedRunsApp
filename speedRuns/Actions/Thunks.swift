@@ -23,7 +23,6 @@ func getGameListThunk(_ query: String) -> Thunk<AppState> {
                     list.append(GameListable(name: game.names?.twitch,
                                              releaseDate: game.release_date,
                                              imageURL: game.assets?.cover_large?.uri))
-                    print(game)
                 }
                 dispatch(SetGameListAction(gameList: list))
             }
