@@ -14,6 +14,10 @@
 		9334B41525088DA3000F0BFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9334B41425088DA3000F0BFB /* Assets.xcassets */; };
 		9334B41825088DA3000F0BFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9334B41625088DA3000F0BFB /* LaunchScreen.storyboard */; };
 		9334B42225089BE6000F0BFB /* GameListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B42125089BE6000F0BFB /* GameListCell.swift */; };
+		9334B4292508A1F5000F0BFB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B4282508A1F5000F0BFB /* AppState.swift */; };
+		9334B42C2508A255000F0BFB /* GameListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B42B2508A255000F0BFB /* GameListable.swift */; };
+		9334B42F2508A2F0000F0BFB /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B42E2508A2F0000F0BFB /* Actions.swift */; };
+		9334B4322508A366000F0BFB /* GameListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B4312508A366000F0BFB /* GameListReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		9334B41725088DA3000F0BFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9334B41925088DA3000F0BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9334B42125089BE6000F0BFB /* GameListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListCell.swift; sourceTree = "<group>"; };
+		9334B4282508A1F5000F0BFB /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9334B42B2508A255000F0BFB /* GameListable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListable.swift; sourceTree = "<group>"; };
+		9334B42E2508A2F0000F0BFB /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		9334B4312508A366000F0BFB /* GameListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListReducer.swift; sourceTree = "<group>"; };
 		D082744E9AA40811C03D23F9 /* Pods-speedRuns.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-speedRuns.release.xcconfig"; path = "Target Support Files/Pods-speedRuns/Pods-speedRuns.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +80,10 @@
 		9334B40A25088DA2000F0BFB /* speedRuns */ = {
 			isa = PBXGroup;
 			children = (
+				9334B4302508A33A000F0BFB /* Reducers */,
+				9334B42D2508A2E0000F0BFB /* Actions */,
+				9334B42A2508A22C000F0BFB /* Models */,
+				9334B4272508A1EA000F0BFB /* State */,
 				9334B42025089BD2000F0BFB /* Views */,
 				9334B41F25089BC3000F0BFB /* View Controllers */,
 				9334B40B25088DA2000F0BFB /* AppDelegate.swift */,
@@ -97,6 +109,38 @@
 				9334B42125089BE6000F0BFB /* GameListCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9334B4272508A1EA000F0BFB /* State */ = {
+			isa = PBXGroup;
+			children = (
+				9334B4282508A1F5000F0BFB /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		9334B42A2508A22C000F0BFB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9334B42B2508A255000F0BFB /* GameListable.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9334B42D2508A2E0000F0BFB /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				9334B42E2508A2F0000F0BFB /* Actions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		9334B4302508A33A000F0BFB /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				9334B4312508A366000F0BFB /* GameListReducer.swift */,
+			);
+			path = Reducers;
 			sourceTree = "<group>";
 		};
 		DCC371790C217806DD5AEE74 /* Frameworks */ = {
@@ -221,10 +265,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9334B4322508A366000F0BFB /* GameListReducer.swift in Sources */,
 				9334B41025088DA2000F0BFB /* SearchViewController.swift in Sources */,
+				9334B4292508A1F5000F0BFB /* AppState.swift in Sources */,
 				9334B40C25088DA2000F0BFB /* AppDelegate.swift in Sources */,
+				9334B42C2508A255000F0BFB /* GameListable.swift in Sources */,
 				9334B40E25088DA2000F0BFB /* SceneDelegate.swift in Sources */,
 				9334B42225089BE6000F0BFB /* GameListCell.swift in Sources */,
+				9334B42F2508A2F0000F0BFB /* Actions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,8 +8,12 @@
 
 import UIKit
 import SnapKit
+import ReSwift
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, StoreSubscriber {
+    typealias StoreSubscriberStateType = AppState
+    
+    var gameList: [GameListable]?
     
     //MARK: - UI
     
@@ -33,6 +37,12 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        mainStore.subscribe(self)
+        mainStore.dispatch(GetGamesListAction())
+    }
+    
+    func newState(state: AppState) {
+        gameList = state.gamesList
     }
 
     private func setUpView() {
@@ -60,12 +70,12 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return gameList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameListCell
-        cell.textLabel?.text = "Hello"
+        cell.textLabel?.text = gameList?[indexPath.row].name
         cell.detailTextLabel?.text = "Subtitle line"
         return cell
     }
