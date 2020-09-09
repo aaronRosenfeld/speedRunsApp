@@ -2,12 +2,18 @@ PODS:
   - Hero (1.5.0)
   - Nuke (9.1.2)
   - ReSwift (5.0.0)
+  - ReSwiftThunk (1.2.0):
+    - ReSwift (~> 5.0)
+    - ReSwiftThunk/Core (= 1.2.0)
+  - ReSwiftThunk/Core (1.2.0):
+    - ReSwift (~> 5.0)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Hero
   - Nuke
   - ReSwift
+  - ReSwiftThunk
   - SnapKit
 
 SPEC REPOS:
@@ -15,14 +21,16 @@ SPEC REPOS:
     - Hero
     - Nuke
     - ReSwift
+    - ReSwiftThunk
     - SnapKit
 
 SPEC CHECKSUMS:
   Hero: b7385b75e7259da62f4f85462f59a5082d66b058
   Nuke: dd2e6be6a34c042a7861e190632781d11f253026
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
+  ReSwiftThunk: 23c8ea9092d9dc94b72005f19352dbd37fa42533
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: a76fed3939e0fcc2f05be82042f2f25cf471d465
+PODFILE CHECKSUM: 0e8d6b30366a4fb0951df3bb8546dc53db58b841
 
 COCOAPODS: 1.9.3

@@ -4,4 +4,5 @@ target 'speedRuns' do
   pod 'Nuke'
   pod 'SnapKit'
   pod 'ReSwift'
+  pod 'ReSwiftThunk'
 end
