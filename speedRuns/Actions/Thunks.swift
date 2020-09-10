@@ -14,13 +14,14 @@ func getGameListThunk(_ query: String) -> Thunk<AppState> {
         guard let state = getState() else { return }
         
         var list: [GameListable] = []
-        searchGames(query: query) { result in
+        api.searchGames(query: query) { result in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let searchData):
                 for game in searchData.data {
-                    list.append(GameListable(name: game.names?.twitch,
+                    list.append(GameListable(id: game.id,
+                                             name: game.names?.twitch,
                                              releaseDate: game.release_date,
                                              imageURL: game.assets?.cover_large?.uri))
                 }
@@ -29,3 +30,19 @@ func getGameListThunk(_ query: String) -> Thunk<AppState> {
         }
     }
 }
+
+func getCategoriesThunk(_ id: String) -> Thunk<AppState> {
+    return Thunk<AppState> { dispatch, getState in
+        guard let state = getState() else { return }
+        
+        api.getCategories(id: id) { result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let catData):
+                dispatch(SetCategoriesAction(categories: catData.data))
+            }
+        }
+    }
+}
+

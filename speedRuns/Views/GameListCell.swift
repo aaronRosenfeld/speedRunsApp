@@ -60,14 +60,14 @@ class GameListCell: UITableViewCell {
     
     private lazy var gameNameLabel: UILabel = {
         let label = UILabel()
-        label.tintColor = .white
+        label.textColor = .white
         label.font = .systemFont(ofSize: 20)
         return label
     }()
     
     private lazy var releaseDateLabel: UILabel = {
         let label = UILabel()
-        label.tintColor = .white
+        label.textColor = .white
         label.font = .systemFont(ofSize: 14)
         return label
     }()

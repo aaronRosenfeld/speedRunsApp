@@ -21,6 +21,8 @@
 		9334B4352508A6FC000F0BFB /* SpeedRunRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B4342508A6FC000F0BFB /* SpeedRunRequests.swift */; };
 		9334B4372508A87A000F0BFB /* GameListableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B4362508A87A000F0BFB /* GameListableResponse.swift */; };
 		9334B43925097760000F0BFB /* Thunks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B43825097760000F0BFB /* Thunks.swift */; };
+		9334B43D2509D348000F0BFB /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B43C2509D348000F0BFB /* CategoriesViewController.swift */; };
+		9334B43F2509D63E000F0BFB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9334B43E2509D63E000F0BFB /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		9334B4342508A6FC000F0BFB /* SpeedRunRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedRunRequests.swift; sourceTree = "<group>"; };
 		9334B4362508A87A000F0BFB /* GameListableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListableResponse.swift; sourceTree = "<group>"; };
 		9334B43825097760000F0BFB /* Thunks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thunks.swift; sourceTree = "<group>"; };
+		9334B43C2509D348000F0BFB /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		9334B43E2509D63E000F0BFB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D082744E9AA40811C03D23F9 /* Pods-speedRuns.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-speedRuns.release.xcconfig"; path = "Target Support Files/Pods-speedRuns/Pods-speedRuns.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				9334B40F25088DA2000F0BFB /* SearchViewController.swift */,
+				9334B43C2509D348000F0BFB /* CategoriesViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			children = (
 				9334B42B2508A255000F0BFB /* GameListable.swift */,
 				9334B4362508A87A000F0BFB /* GameListableResponse.swift */,
+				9334B43E2509D63E000F0BFB /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,12 +290,14 @@
 			files = (
 				9334B4322508A366000F0BFB /* GameListReducer.swift in Sources */,
 				9334B41025088DA2000F0BFB /* SearchViewController.swift in Sources */,
+				9334B43D2509D348000F0BFB /* CategoriesViewController.swift in Sources */,
 				9334B4352508A6FC000F0BFB /* SpeedRunRequests.swift in Sources */,
 				9334B4292508A1F5000F0BFB /* AppState.swift in Sources */,
 				9334B4372508A87A000F0BFB /* GameListableResponse.swift in Sources */,
 				9334B40C25088DA2000F0BFB /* AppDelegate.swift in Sources */,
 				9334B42C2508A255000F0BFB /* GameListable.swift in Sources */,
 				9334B40E25088DA2000F0BFB /* SceneDelegate.swift in Sources */,
+				9334B43F2509D63E000F0BFB /* Category.swift in Sources */,
 				9334B43925097760000F0BFB /* Thunks.swift in Sources */,
 				9334B42225089BE6000F0BFB /* GameListCell.swift in Sources */,
 				9334B42F2508A2F0000F0BFB /* Actions.swift in Sources */,

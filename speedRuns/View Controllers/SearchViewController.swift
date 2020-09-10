@@ -96,6 +96,12 @@ extension SearchViewController: UITableViewDataSource {
 
 extension SearchViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = CategoriesViewController()
+        vc.game = gameList?[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {

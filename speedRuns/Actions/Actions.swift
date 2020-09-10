@@ -11,3 +11,6 @@ import ReSwift
 struct SetGameListAction: Action {
     let gameList: [GameListable]
 }
+struct SetCategoriesAction: Action {
+    let categories: [Category]
+}

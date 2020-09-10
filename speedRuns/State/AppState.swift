@@ -10,4 +10,5 @@ import ReSwift
 
 struct AppState: StateType {
     var gamesList: [GameListable] = []
+    var categories: [Category] = []
 }

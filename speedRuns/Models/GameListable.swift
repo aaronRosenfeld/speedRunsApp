@@ -9,11 +9,13 @@
 import UIKit
 
 class GameListable {
+    var id: String?
     var name: String?
     var releaseDate: String?
     var imageURL: String?
     
-    init(name: String?, releaseDate: String?, imageURL: String?) {
+    init(id: String?, name: String?, releaseDate: String?, imageURL: String?) {
+        self.id = id
         self.name = name
         self.releaseDate = releaseDate
         self.imageURL = imageURL

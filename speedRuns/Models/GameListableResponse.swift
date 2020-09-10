@@ -26,11 +26,13 @@ struct GameListableResponse: Decodable {
             case cover_large = "cover-large"
         }
     }
+    var id: String?
     var names: Name?
     var release_date: String?
     var assets: Assets?
     
     enum CodingKeys: String, CodingKey {
+        case id
         case names
         case release_date = "release-date"
         case assets

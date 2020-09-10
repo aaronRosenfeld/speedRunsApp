@@ -15,6 +15,8 @@ func gameListReducer(action: Action, state: AppState?) -> AppState {
     switch action {
     case let action as SetGameListAction:
         state.gamesList = action.gameList
+    case let action as SetCategoriesAction:
+        state.categories = action.categories
     default:
         break
     }
